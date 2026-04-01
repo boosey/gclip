@@ -89,16 +89,20 @@ For each existing agent that maps to a gclip role, you need to update their syst
 
 ### 2a. Enhance Your CEO
 
+This is the most important enhancement. The gclip CEO is **not** a dev process coordinator — it's a full business executive who also deeply understands the gstack development methodology. Your existing Paperclip CEO already manages the full C-suite (CIO, General Counsel, CFO, COO, CMO). The gclip enhancement adds:
+
+- Knowledge of the Think → Plan → Build → Review → Test → Ship → Reflect dev process
+- Scope challenge capability (EXPANSION / SELECTIVE_EXPANSION / HOLD / REDUCTION)
+- Decision triage (MECHANICAL / TASTE / USER_CHALLENGE)
+- Cognitive gearing awareness (expects the engineering org to follow these principles)
+
+The CEO uses this knowledge when product/engineering decisions reach them — but they don't micromanage the CTO's domain.
+
 Open your CEO agent in the Paperclip UI (Settings → Agent Configuration).
 
 **Add skills:** `autoplan`, `office-hours`, `plan-ceo-review`, `workflow-gate`
 
-**Update system prompt** — append the content from `agents/ceo/AGENTS.md` (everything below the `---` frontmatter) to your CEO's existing system prompt. The key additions are:
-
-- Cognitive gearing (user-sovereignty principle)
-- Decision triage (MECHANICAL / TASTE / USER_CHALLENGE)
-- 10-stage strategic review capability
-- Scope challenge modes (EXPANSION / SELECTIVE_EXPANSION / HOLD / REDUCTION)
+**Replace system prompt** — use the full content from `agents/ceo/AGENTS.md` (everything below the `---` frontmatter). It explicitly references managing CIO, General Counsel, CFO, COO, CMO as direct reports and includes cross-functional responsibilities alongside the dev process expertise.
 
 **Set cognitive config** (if your Paperclip version supports custom metadata):
 ```yaml
