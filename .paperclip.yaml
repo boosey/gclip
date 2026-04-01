@@ -1,0 +1,44 @@
+schema: paperclip/v1
+
+agents:
+  ceo:
+    inputs:
+      env: {}
+
+  cto:
+    inputs:
+      env: {}
+
+  staff-engineer:
+    inputs:
+      env: {}
+
+  release-engineer:
+    inputs:
+      env:
+        GH_TOKEN:
+          kind: secret
+          requirement: optional
+
+  qa-engineer:
+    inputs:
+      env: {}
+
+  cso:
+    inputs:
+      env: {}
+
+  ux-designer:
+    inputs:
+      env: {}
+
+  evaluator:
+    inputs:
+      env: {}
+
+  learning-curator:
+    inputs:
+      env:
+        GH_TOKEN:
+          kind: secret
+          requirement: optional
