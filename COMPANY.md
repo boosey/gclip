@@ -2,7 +2,7 @@
 name: gclip
 description: Hybrid agent company merging Paperclip orchestration with gstack cognitive methodology
 version: 0.1.0
-agents: 9
+agents: 10
 skills: 37
 license: MIT
 sources:
@@ -41,12 +41,15 @@ paperclip company import --from ./gclip
                   |
                   v
                 CEO --------------- Evaluator
-              (vision)           (self-improvement)
-                |                       |
-                v                       v
-               CTO              Learning Curator
-            (tech lead)         (memory manager)
-         /    |    \    \    \
-       Staff Release QA  CSO  UX
-       Eng   Eng    Eng  (sec) Designer
+             (business)          (self-improvement)
+           /    |    \    \           |
+         CIO  CFO  COO  CMO    Learning Curator
+        (dev   ...  ...  ...   (memory manager)
+       process)
+          |
+         CTO
+       (tech lead)
+      /   |    \    \    \
+   Staff Rel.  QA  CSO  UX
+   Eng   Eng   Eng (sec) Designer
 ```

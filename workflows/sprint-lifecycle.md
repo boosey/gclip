@@ -6,8 +6,8 @@ Maps gstack's immutable 7-phase workflow to Paperclip's issue status machine.
 
 | Phase | Paperclip Status Transition | Active Agent(s) | Skills Invoked | Gate to Next Phase |
 |---|---|---|---|---|
-| **THINK** | backlog → todo | CEO | office-hours, plan-ceo-review | CEO marks issue as `todo` |
-| **PLAN** | todo → in_progress | CTO | plan-eng-review, plan-design-review, autoplan | CTO marks issue as `in_progress` |
+| **THINK** | backlog → todo | CIO | office-hours, plan-ceo-review | CIO marks issue as `todo` |
+| **PLAN** | todo → in_progress | CIO, CTO | autoplan, plan-eng-review, plan-design-review | CTO marks issue as `in_progress` |
 | **BUILD** | in_progress | Staff Engineer | (adapter executes implementation) | Staff Engineer marks `in_review` when code complete |
 | **REVIEW** | in_progress → in_review | Staff Engineer, CSO | review, investigate, cso-audit, guard | All review findings resolved or deferred |
 | **TEST** | in_review | QA Engineer | qa, qa-only, benchmark, browse, canary | QA passes or blocks |
@@ -40,7 +40,7 @@ The `workflow-gate` skill runs as a pre-check at each heartbeat. Before an agent
 
 Each agent changes issue status as its **last action** in a heartbeat, signaling handoff to the next phase:
 
-- CEO: backlog → todo (thinking complete, ready for planning)
+- CIO: backlog → todo (thinking complete, scope decided, ready for planning)
 - CTO: todo → in_progress (plan locked, ready for implementation)
 - Staff Engineer: in_progress → in_review (code + review complete)
 - QA Engineer: leaves in_review (test complete, ready for ship)

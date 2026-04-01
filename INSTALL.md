@@ -40,7 +40,8 @@ CEO
 
 | gclip Agent | Action | Maps To | Notes |
 |---|---|---|---|
-| **CEO** | ENHANCE | Your existing CEO | Add gclip skills + cognitive config to existing agent |
+| **CEO** | ENHANCE | Your existing CEO | Add `/office-hours` for business strategy framing; delegates dev process to CIO |
+| **CIO** | ENHANCE | Your existing CIO | Major upgrade — becomes the dev process owner with autoplan, scope challenge, workflow gates |
 | **CTO** | ENHANCE | Your existing CTO | Add gclip skills + cognitive config to existing agent |
 | **Staff Engineer** | ENHANCE | Your existing Senior Developer | Rename optional — add review/investigate/guard skills |
 | **UX Designer** | ENHANCE | Your existing UX/UI Designer | Add full gclip design skill suite (11 skills) |
@@ -54,7 +55,6 @@ CEO
 
 These agents are not part of gclip's engineering focus. They stay untouched:
 
-- **CIO** — Your CIO manages the CTO. gclip's CTO reports to the CEO in the default config, but in your org the CTO reports to the CIO. Keep this hierarchy.
 - **General Counsel** — Legal research. No gclip equivalent.
 - **CFO** — Finance. No gclip equivalent.
 - **COO** — Operations. No gclip equivalent.
@@ -89,33 +89,42 @@ For each existing agent that maps to a gclip role, you need to update their syst
 
 ### 2a. Enhance Your CEO
 
-This is the most important enhancement. The gclip CEO is **not** a dev process coordinator — it's a full business executive who also deeply understands the gstack development methodology. Your existing Paperclip CEO already manages the full C-suite (CIO, General Counsel, CFO, COO, CMO). The gclip enhancement adds:
-
-- Knowledge of the Think → Plan → Build → Review → Test → Ship → Reflect dev process
-- Scope challenge capability (EXPANSION / SELECTIVE_EXPANSION / HOLD / REDUCTION)
-- Decision triage (MECHANICAL / TASTE / USER_CHALLENGE)
-- Cognitive gearing awareness (expects the engineering org to follow these principles)
-
-The CEO uses this knowledge when product/engineering decisions reach them — but they don't micromanage the CTO's domain.
+Your CEO remains a business leader. The gclip enhancement is minimal — the CEO gets `/office-hours` for company-level strategy sessions and learns to delegate the dev process entirely to the CIO.
 
 Open your CEO agent in the Paperclip UI (Settings → Agent Configuration).
 
-**Add skills:** `autoplan`, `office-hours`, `plan-ceo-review`, `workflow-gate`
+**Add skills:** `office-hours`
 
-**Replace system prompt** — use the full content from `agents/ceo/AGENTS.md` (everything below the `---` frontmatter). It explicitly references managing CIO, General Counsel, CFO, COO, CMO as direct reports and includes cross-functional responsibilities alongside the dev process expertise.
+**Update system prompt** — replace with content from `agents/ceo/AGENTS.md`. Key changes: the CEO explicitly delegates the development process to the CIO and intervenes only on cross-functional conflicts, budget thresholds, and Evaluator proposals with strategic impact.
 
-**Set cognitive config** (if your Paperclip version supports custom metadata):
+### 2b. Enhance Your CIO (THE BIG ONE)
+
+This is the most important enhancement. Your CIO becomes the **owner and enforcer of the gclip development methodology**. In gstack's original design, the "CEO" role was really a dev process orchestrator — in your org, that's the CIO.
+
+**Add skills:** `autoplan`, `office-hours`, `plan-ceo-review`, `workflow-gate`, `learn`
+
+**Replace system prompt** — use the full content from `agents/cio/AGENTS.md`. The CIO now:
+
+- **Owns Think → Plan → Build → Review → Test → Ship → Reflect** and enforces phase ordering
+- **Runs scope challenge** via `/plan-ceo-review` on every engineering initiative (EXPANSION / SELECTIVE_EXPANSION / HOLD / REDUCTION, with bias toward REDUCTION)
+- **Orchestrates autoplan** — CIO → Design → Eng review pipeline (sequential, gated)
+- **Enforces workflow gates** — the `/workflow-gate` skill blocks agents from acting on issues in wrong phases
+- **Translates CEO directives** into engineering scope — finds the smallest scope that achieves the business objective
+
+**Set cognitive config:**
 ```yaml
 cognitive:
   gearing: user-sovereignty
-  decision_default: USER_CHALLENGE
+  decision_default: TASTE
   workflow_phases: [think, plan]
   anti_sycophancy: true
 ```
 
-### 2b. Enhance Your CTO
+**Note:** The CIO keeps `/office-hours` for engineering-scoped problem framing. The CEO also has `/office-hours` for company-level strategy. Same skill, different context.
 
-**Add skills:** `plan-eng-review`, `plan-design-review`, `retro`, `codex`, `workflow-gate`
+### 2c. Enhance Your CTO
+
+**Add skills:** `plan-eng-review`, `plan-design-review`, `retro`, `codex`
 
 **Update system prompt** — append content from `agents/cto/AGENTS.md`. Key additions:
 
@@ -124,9 +133,9 @@ cognitive:
 - Weekly retro production
 - Issue status transition authority (todo → in_progress)
 
-**Note:** In your org, CTO reports to CIO (not CEO). This is fine. gclip's `reportsTo: ceo` is the default — adapt to your hierarchy. The CTO's skills and cognitive config work regardless of where they sit in the tree.
+**Note:** Your CTO reports to CIO, which is exactly how gclip is now designed. The CIO orchestrates the overall process; the CTO executes the technical reviews within it.
 
-### 2c. Enhance Your Senior Developer → Staff Engineer
+### 2d. Enhance Your Senior Developer → Staff Engineer
 
 **Add skills:** `review`, `investigate`, `guard`, `learn`
 
@@ -145,7 +154,7 @@ cognitive:
 
 **Optional:** Rename from "Senior Developer" to "Staff Engineer" for consistency with gclip terminology.
 
-### 2d. Enhance Your UX/UI Designer
+### 2e. Enhance Your UX/UI Designer
 
 **Add skills:** `design-consultation`, `design-review`, `design-html`, `design-shotgun`, `user-research`, `wireframe`, `information-architecture`, `interaction-design`, `ab-test-design`, `browse`, `learn`
 
@@ -261,10 +270,10 @@ For each skill directory in `skills/`:
 
 ### Skill → Agent Assignment Reference
 
-**Strategic (CEO)**
-- `autoplan` → CEO
-- `office-hours` → CEO
-- `plan-ceo-review` → CEO
+**Strategic (CEO + CIO)**
+- `office-hours` → CEO (business strategy), CIO (engineering initiatives)
+- `autoplan` → CIO
+- `plan-ceo-review` → CIO
 
 **Engineering (CTO)**
 - `plan-eng-review` → CTO
@@ -307,14 +316,14 @@ For each skill directory in `skills/`:
 - `document-release` → Release Engineer
 - `setup-deploy` → Release Engineer
 
-**Workflow (Shared)**
-- `workflow-gate` → CEO, CTO
+**Workflow (CIO)**
+- `workflow-gate` → CIO
 
 **Self-Improvement (Evaluator + Learning Curator)**
 - `evaluate` → Evaluator
 - `propose-improvement` → Evaluator
 - `retro` → CTO, Evaluator, Learning Curator
-- `learn` → Staff Engineer, UX Designer, Evaluator, Learning Curator
+- `learn` → CIO, Staff Engineer, UX Designer, Evaluator, Learning Curator
 
 ---
 
@@ -383,8 +392,9 @@ After all agents are created and skills installed, verify with this checklist:
 
 ### Agent Verification
 
-- [ ] CEO has 4 gclip skills (autoplan, office-hours, plan-ceo-review, workflow-gate)
-- [ ] CTO has 5 gclip skills (plan-eng-review, plan-design-review, retro, codex, workflow-gate)
+- [ ] CEO has 1 gclip skill (office-hours)
+- [ ] CIO has 5 gclip skills (autoplan, office-hours, plan-ceo-review, workflow-gate, learn)
+- [ ] CTO has 4 gclip skills (plan-eng-review, plan-design-review, retro, codex)
 - [ ] Senior Developer has 4 gclip skills (review, investigate, guard, learn)
 - [ ] UX/UI Designer has 11 gclip skills (all design + browse + learn)
 - [ ] Release Engineer exists with 4 skills (ship, land-and-deploy, document-release, setup-deploy)
@@ -398,7 +408,8 @@ After all agents are created and skills installed, verify with this checklist:
 - [ ] Release Engineer, QA Engineer, CSO report to CTO
 - [ ] Evaluator reports to CEO (not CIO or CTO)
 - [ ] Learning Curator reports to Evaluator
-- [ ] Existing agents (CIO, General Counsel, CFO, COO, CMO, Frontend Engineer) are unchanged
+- [ ] CIO is enhanced with dev process skills (not unchanged)
+- [ ] Existing agents (General Counsel, CFO, COO, CMO, Frontend Engineer) are unchanged
 
 ### Heartbeat Verification
 

@@ -35,22 +35,26 @@ gclip is the superset. It takes Paperclip's infrastructure and injects gstack's 
                       |
                       v
                     CEO --------------- Evaluator
-                  (vision)           (self-improvement)
-                    |                       |
-                    v                       v
-                   CTO              Learning Curator
-                (tech lead)         (memory manager)
-             /    |    \    \    \
-           Staff Release QA  CSO  UX
-           Eng   Eng    Eng  (sec) Designer
+                 (business)          (self-improvement)
+               /    |    \    \           |
+             CIO  CFO  COO  CMO    Learning Curator
+            (dev   ...  ...  ...
+           process)
+              |
+             CTO
+          (tech lead)
+         /   |    \    \    \
+      Staff Rel.  QA  CSO  UX
+      Eng   Eng   Eng (sec) Designer
 ```
 
 ## Agent Inventory
 
 | Agent | Title | Skills | Budget | Heartbeat |
 |---|---|---|---|---|
-| CEO | Chief Executive Officer | autoplan, office-hours, plan-ceo-review, workflow-gate | $1,000 | Monday (planning) |
-| CTO | Chief Technology Officer | plan-eng-review, plan-design-review, retro, codex, workflow-gate | $800 | On demand + Sunday 23:00 UTC (retro) |
+| CEO | Chief Executive Officer | office-hours | $1,000 | Monday (planning) |
+| CIO | Chief Information Officer | autoplan, office-hours, plan-ceo-review, workflow-gate, learn | $800 | Monday (planning) + on demand |
+| CTO | Chief Technology Officer | plan-eng-review, plan-design-review, retro, codex | $800 | On demand + Sunday 23:00 UTC (retro) |
 | Staff Engineer | Staff Engineer | review, investigate, guard, learn | $500 | On demand (build/review) |
 | Release Engineer | Release Engineer | ship, land-and-deploy, document-release, setup-deploy | $300 | On demand (ship phase) |
 | QA Engineer | QA Engineer | browse, qa, qa-only, benchmark, canary, setup-browser-cookies | $400 | On demand (test phase) |
@@ -58,16 +62,16 @@ gclip is the superset. It takes Paperclip's infrastructure and injects gstack's 
 | UX Designer | UX Designer | design-consultation, design-review, design-html, design-shotgun, user-research, wireframe, information-architecture, interaction-design, ab-test-design, browse, learn | $400 | On demand (plan/review) |
 | Evaluator | Agent Performance Evaluator | evaluate, propose-improvement, retro, learn | $600 | Monday 02:00 UTC |
 | Learning Curator | Institutional Memory Manager | learn, retro | $200 | Monday 06:00 UTC |
-| | | **Total** | **$4,500/mo** | |
+| | | **Total** | **$5,300/mo** | |
 
 ## Skill Inventory
 
 ### Strategic
 | Skill | Used By | Purpose |
 |---|---|---|
-| office-hours | CEO | Problem framing and requirements gathering |
-| plan-ceo-review | CEO | 10-stage architectural review with scope challenge |
-| autoplan | CEO | Automatic issue planning and breakdown |
+| office-hours | CEO, CIO | Problem framing — CEO for business strategy, CIO for engineering initiatives |
+| plan-ceo-review | CIO | 10-stage scope challenge review (EXPANSION / HOLD / REDUCTION) |
+| autoplan | CIO | Orchestrate CIO → Design → Eng review pipeline |
 
 ### Engineering
 | Skill | Used By | Purpose |
@@ -94,7 +98,7 @@ gclip is the superset. It takes Paperclip's infrastructure and injects gstack's 
 | land-and-deploy | Release Engineer | Merge, deploy, and verify production health |
 | document-release | Release Engineer | Post-ship documentation updates |
 | setup-deploy | Release Engineer | Deploy environment configuration |
-| workflow-gate | CEO, CTO | Phase enforcement pre-check at each heartbeat |
+| workflow-gate | CIO | Phase enforcement pre-check at each heartbeat |
 
 ### Design
 | Skill | Used By | Purpose |
@@ -146,7 +150,7 @@ Guardrails: 168h cooldown per proposal type, min 5 data points required, no self
 paperclip company import --from ./gclip
 ```
 
-This imports all 9 agents, 37 skills, workflows, and the self-improvement loop into your Paperclip instance.
+This imports all 10 agents, 37 skills, workflows, and the self-improvement loop into your Paperclip instance.
 
 ## Sources
 

@@ -5,6 +5,10 @@ agents:
     inputs:
       env: {}
 
+  cio:
+    inputs:
+      env: {}
+
   cto:
     inputs:
       env: {}

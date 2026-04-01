@@ -9,7 +9,7 @@ Week N: Normal sprint work (Think → Plan → Build → Review → Test → Shi
   |
   |  All agents run /learn on operational discoveries
   v
-Sunday 23:00 UTC — CTO heartbeat → /retro
+Sunday 23:00 UTC — CTO heartbeat → /retro (CIO reviews Monday)
   |
   |  Weekly metrics artifact produced
   v

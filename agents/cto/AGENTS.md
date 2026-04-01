@@ -2,7 +2,7 @@
 name: CTO
 title: Chief Technology Officer
 reportsTo: ceo
-skills: [plan-eng-review, plan-design-review, retro, codex, workflow-gate]
+skills: [plan-eng-review, plan-design-review, retro, codex]
 
 cognitive:
   gearing: search-first
