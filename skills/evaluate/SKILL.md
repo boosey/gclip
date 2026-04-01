@@ -1,9 +1,10 @@
 ---
 name: evaluate
 description: >
-  Analyzes agent performance using Paperclip telemetry. Computes per-agent
-  metrics, classifies findings by confidence and action type, and feeds
-  verified improvements to /propose-improvement.
+  Analyzes performance of ALL agents in the company — including the CEO
+  and the Evaluator itself. Computes per-agent metrics, classifies findings
+  by confidence and action type, and feeds verified improvements to
+  /propose-improvement. No agent is exempt from evaluation.
 metadata:
   sources:
     - kind: original
@@ -58,7 +59,8 @@ Reads from five Paperclip data sources to build a composite performance picture 
 
 - **Max 3 proposals per evaluation** — prevents change fatigue on the board.
 - **Min 5 data points** required for any finding — prevents knee-jerk reactions from noise.
-- **Cannot evaluate own agent** — the Evaluator never analyzes its own performance metrics.
+- **Self-evaluation required** — the Evaluator MUST include itself in every evaluation cycle. If proposal acceptance rate drops below 50% over 4 weeks, it must propose changes to its own evaluation criteria. Self-proposals follow the same Board approval path.
+- **CEO evaluation escalation** — findings about the CEO bypass the CEO and go directly to the Board, since the CEO cannot objectively approve proposals about themselves.
 - **168h cooldown** per agent per proposal type — prevents oscillating recommendations.
 - **Findings below threshold are stored, not discarded** — they accumulate toward future VERIFIED status.
 
