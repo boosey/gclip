@@ -6,11 +6,11 @@ description: >
   approval requests with evidence, diffs, and rollback plans.
 metadata:
   sources:
-    - kind: original
-      repo: boosey/gclip
-      attribution: gclip project
+    - kind: github-file
+      repo: paperclipai/companies
+      attribution: PaperclipAI
       license: MIT
-      usage: board approval pipeline for agent organization improvements
+      usage: vendored
   requires_api:
     - POST /api/approvals
     - GET /api/approvals

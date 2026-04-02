@@ -9,6 +9,18 @@ agents:
     inputs:
       env: {}
 
+  cfo:
+    inputs:
+      env: {}
+
+  cmo:
+    inputs:
+      env: {}
+
+  general-counsel:
+    inputs:
+      env: {}
+
   cto:
     inputs:
       env: {}

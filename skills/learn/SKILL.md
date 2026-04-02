@@ -6,11 +6,11 @@ description: >
   API and local .context/learnings.json cache.
 metadata:
   sources:
-    - kind: fork
+    - kind: github-file
       repo: garrytan/gstack
       attribution: gstack learn skill
       license: MIT
-      usage: institutional memory with Paperclip dual-write
+      usage: vendored
   requires_api:
     - POST /api/documents
     - GET /api/documents

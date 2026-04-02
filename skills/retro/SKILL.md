@@ -6,11 +6,11 @@ description: >
   per-agent breakdowns and week-over-week deltas.
 metadata:
   sources:
-    - kind: fork
+    - kind: github-file
       repo: garrytan/gstack
       attribution: gstack retro skill
       license: MIT
-      usage: weekly retrospective with Paperclip telemetry
+      usage: vendored
   requires_api:
     - GET /api/heartbeat-runs
     - GET /api/cost-events

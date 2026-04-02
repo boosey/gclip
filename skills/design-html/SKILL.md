@@ -6,11 +6,11 @@ description: >
   implementation with responsive behavior, accessibility, and design token usage.
 metadata:
   sources:
-    - kind: fork
+    - kind: github-file
       repo: garrytan/gstack
       attribution: gstack design-html skill
       license: MIT
-      usage: mockup-to-code conversion adapted for Paperclip heartbeat model
+      usage: vendored
 ---
 
 # Design to Code

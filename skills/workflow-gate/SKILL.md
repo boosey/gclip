@@ -6,11 +6,11 @@ description: >
   before an agent performs work.
 metadata:
   sources:
-    - kind: original
-      repo: boosey/gclip
-      attribution: gclip project
+    - kind: github-file
+      repo: paperclipai/companies
+      attribution: PaperclipAI
       license: MIT
-      usage: workflow phase enforcement via Paperclip issue status
+      usage: vendored
   requires_api:
     - GET /api/issues
 ---

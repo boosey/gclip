@@ -6,11 +6,11 @@ description: >
   Cookies stored in memory only, never persisted to disk.
 metadata:
   sources:
-    - kind: fork
+    - kind: github-file
       repo: garrytan/gstack
       attribution: Garry Tan
       license: MIT
-      usage: Ported to Paperclip heartbeat execution model
+      usage: vendored
   requires_api: false
 ---
 

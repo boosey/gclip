@@ -1,6 +1,6 @@
-# gclip Ethos
+# PaperclipAI Ethos
 
-The cognitive philosophy governing all gclip agents. Merged from gstack's three ethos layers with Paperclip's governance principles.
+The cognitive philosophy governing all PaperclipAI agents. Merged from gstack's three ethos layers with Paperclip's governance principles.
 
 ---
 

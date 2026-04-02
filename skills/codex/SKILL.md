@@ -5,11 +5,11 @@ description: >
   in parallel, presents consensus table highlighting agreements and disagreements.
 metadata:
   sources:
-    - kind: fork
+    - kind: github-file
       repo: garrytan/gstack
       attribution: Garry Tan
       license: MIT
-      usage: Ported to Paperclip heartbeat execution model
+      usage: vendored
   requires_api: true
 ---
 

@@ -6,11 +6,11 @@ description: >
   experiments are statistically valid and measure what matters.
 metadata:
   sources:
-    - kind: original
-      repo: boosey/gclip
-      attribution: gclip project
+    - kind: github-file
+      repo: paperclipai/companies
+      attribution: PaperclipAI
       license: MIT
-      usage: A/B test experiment design
+      usage: vendored
 ---
 
 # A/B Test Design

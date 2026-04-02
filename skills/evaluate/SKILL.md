@@ -7,11 +7,11 @@ description: >
   /propose-improvement. No agent is exempt from evaluation.
 metadata:
   sources:
-    - kind: original
-      repo: boosey/gclip
-      attribution: gclip project
+    - kind: github-file
+      repo: paperclipai/companies
+      attribution: PaperclipAI
       license: MIT
-      usage: agent performance analysis using Paperclip telemetry
+      usage: vendored
   requires_api:
     - GET /api/heartbeat-runs
     - GET /api/cost-events

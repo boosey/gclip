@@ -5,11 +5,11 @@ description: >
   live review (80-item checklist with CSS-first fixes). Includes AI slop detection.
 metadata:
   sources:
-    - kind: fork
+    - kind: github-file
       repo: garrytan/gstack
       attribution: Garry Tan
       license: MIT
-      usage: Ported to Paperclip heartbeat execution model
+      usage: vendored
   requires_api: false
 ---
 

@@ -6,11 +6,11 @@ description: >
   Covers site maps, taxonomy, labeling systems, and wayfinding patterns.
 metadata:
   sources:
-    - kind: original
-      repo: boosey/gclip
-      attribution: gclip project
+    - kind: github-file
+      repo: paperclipai/companies
+      attribution: PaperclipAI
       license: MIT
-      usage: information architecture and navigation design
+      usage: vendored
 ---
 
 # Information Architecture

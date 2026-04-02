@@ -6,11 +6,11 @@ description: >
   and flow before investing in visual design or implementation.
 metadata:
   sources:
-    - kind: original
-      repo: boosey/gclip
-      attribution: gclip project
+    - kind: github-file
+      repo: paperclipai/companies
+      attribution: PaperclipAI
       license: MIT
-      usage: wireframing and prototyping
+      usage: vendored
 ---
 
 # Wireframe

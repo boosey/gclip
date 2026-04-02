@@ -1,55 +1,36 @@
 ---
-name: gclip
-description: Hybrid agent company merging Paperclip orchestration with gstack cognitive methodology
-version: 0.1.0
-agents: 10
-skills: 37
+name: PaperclipAI
+description: PaperclipAI company package combining gstack engineering rigor with company-level strategy, finance, marketing, legal, and self-improvement roles
+slug: paperclipai
+schema: agentcompanies/v1
+version: 1.0.0
 license: MIT
-sources:
-  - kind: fork
-    repo: garrytan/gstack
-    license: MIT
-    usage: cognitive methodology, skill definitions, workflow phases
-  - kind: compatible
-    repo: paperclipai/paperclip
-    license: MIT
-    usage: orchestration infrastructure, adapter system, board governance
+authors:
+  - name: boosey
+goals:
+  - Preserve Garry Tan's gstack philosophy as the engineering operating system
+  - Extend the organization into a broader company with finance, marketing, legal, and governance roles
+  - Keep the company import-ready for Paperclip with clear agent boundaries
+metadata:
+  sources:
+    - kind: github-dir
+      repo: garrytan/gstack
+      path: .
+      attribution: Garry Tan
+      license: MIT
+      usage: referenced
+    - kind: github-dir
+      repo: paperclipai/paperclip
+      path: .
+      attribution: PaperclipAI
+      license: MIT
+      usage: referenced
 ---
 
-# gclip
+PaperclipAI is the company package that ties together three useful ideas:
 
-A hybrid agent company definition that runs on [Paperclip](https://github.com/paperclipai/paperclip) infrastructure with [gstack](https://github.com/garrytan/gstack) cognitive methodology.
+- Paperclip gives the importable company structure and governance surface.
+- gstack gives the engineering operating system and phase discipline.
+- PaperclipAI expands the org into a broader company instead of stopping at software delivery.
 
-## What this is
-
-gclip is a superset: it takes Paperclip's multi-agent orchestration (heartbeats, budgets, board governance, adapter abstraction) and injects gstack's opinionated workflow rigor (cognitive gearing, decision triage, phase enforcement, anti-sycophancy, operational limits).
-
-It adds two novel agents not present in either parent project:
-- **Evaluator** — observes all agent performance via Paperclip telemetry and proposes improvements to the board
-- **Learning Curator** — maintains institutional memory, applies board-approved changes, prunes stale knowledge
-
-## Import
-
-```bash
-paperclip company import --from ./gclip
-```
-
-## Org Chart
-
-```
-              BOARD (Human)
-                  |
-                  v
-                CEO --------------- Evaluator
-             (business)          (self-improvement)
-           /    |    \    \           |
-         CIO  CFO  COO  CMO    Learning Curator
-        (dev   ...  ...  ...   (memory manager)
-       process)
-          |
-         CTO
-       (tech lead)
-      /   |    \    \    \
-   Staff Rel.  QA  CSO  UX
-   Eng   Eng   Eng (sec) Designer
-```
+The result is a company package that is ready to import, opinionated about engineering, and broad enough to coordinate business functions without inventing a separate operating model for each one.

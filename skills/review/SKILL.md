@@ -6,11 +6,11 @@ description: >
   logic, edge cases, state management. Classifies findings as CRITICAL/AUTO-FIX/ASK.
 metadata:
   sources:
-    - kind: fork
+    - kind: github-file
       repo: garrytan/gstack
       attribution: Garry Tan
       license: MIT
-      usage: Ported to Paperclip heartbeat execution model
+      usage: vendored
   requires_api: false
 ---
 

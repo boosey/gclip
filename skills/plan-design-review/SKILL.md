@@ -5,11 +5,11 @@ description: >
   design slop. CSS-first recommendations. Runs on plans, not live code.
 metadata:
   sources:
-    - kind: fork
+    - kind: github-file
       repo: garrytan/gstack
       attribution: Garry Tan
       license: MIT
-      usage: Ported to Paperclip heartbeat execution model
+      usage: vendored
   requires_api: false
 ---
 

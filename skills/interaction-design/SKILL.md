@@ -6,11 +6,11 @@ description: >
   precise timing, easing, and state definitions.
 metadata:
   sources:
-    - kind: original
-      repo: boosey/gclip
-      attribution: gclip project
+    - kind: github-file
+      repo: paperclipai/companies
+      attribution: PaperclipAI
       license: MIT
-      usage: interaction and motion design
+      usage: vendored
 ---
 
 # Interaction Design

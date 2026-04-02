@@ -1,6 +1,6 @@
 # Improvement Loop: Self-Improving Agent Organization
 
-The weekly cycle that enables gclip agents to evolve through observation, analysis, and board-approved changes.
+The weekly cycle that enables PaperclipAI agents to evolve through observation, analysis, and board-approved changes.
 
 ## Cycle Overview
 

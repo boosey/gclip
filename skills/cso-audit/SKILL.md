@@ -6,11 +6,11 @@ description: >
   Every finding requires exploit scenario, evidence, and remediation roadmap.
 metadata:
   sources:
-    - kind: fork
+    - kind: github-file
       repo: garrytan/gstack
       attribution: Garry Tan
       license: MIT
-      usage: Ported to Paperclip heartbeat execution model
+      usage: vendored
   requires_api: false
 ---
 

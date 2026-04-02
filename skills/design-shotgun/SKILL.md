@@ -7,11 +7,11 @@ description: >
   committing to a single approach.
 metadata:
   sources:
-    - kind: fork
+    - kind: github-file
       repo: garrytan/gstack
       attribution: gstack design-shotgun skill
       license: MIT
-      usage: visual variant generation adapted for Paperclip heartbeat model
+      usage: vendored
 ---
 
 # Design Shotgun

@@ -6,11 +6,11 @@ description: >
   research findings into actionable design requirements.
 metadata:
   sources:
-    - kind: original
-      repo: boosey/gclip
-      attribution: gclip project
+    - kind: github-file
+      repo: paperclipai/companies
+      attribution: PaperclipAI
       license: MIT
-      usage: user research and persona development
+      usage: vendored
 ---
 
 # User Research

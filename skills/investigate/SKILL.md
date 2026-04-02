@@ -5,11 +5,11 @@ description: >
   3-strike rule for failed hypotheses. Evidence-based with testable predictions.
 metadata:
   sources:
-    - kind: fork
+    - kind: github-file
       repo: garrytan/gstack
       attribution: Garry Tan
       license: MIT
-      usage: Ported to Paperclip heartbeat execution model
+      usage: vendored
   requires_api: false
 ---
 
